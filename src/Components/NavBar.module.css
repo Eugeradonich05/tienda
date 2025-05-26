@@ -17,8 +17,9 @@
 .logo {
   font-size: 2.6rem;
    font-family: 'Gambetta', serif;
-  color: #1d1d1d;
+  color: #000000;
   margin-left: 10px;
+  font-weight: 0;
 }
 
 .navLinks {
@@ -35,7 +36,7 @@
   font-weight: 500;
   align-content: center;
    font-family: 'Gambetta', serif;
-
+  font-size: 1.1rem;
 
     
 }

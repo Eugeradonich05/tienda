@@ -23,8 +23,8 @@
   border-radius: 1rem;
   max-width: 360px;
   text-align: left;
-  background: #e0e0e0;
- box-shadow: 20px 20px 60px #bebebe,
+  background: #fff7f7;
+ box-shadow: 20px 20px 100px #d1b3b3,
                -20px -20px 60px #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
