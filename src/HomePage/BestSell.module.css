@@ -1,0 +1,129 @@
+.bestSell {
+  position: relative; /* necesario para posicionar los blobs adentro */
+  overflow: hidden; /* oculta el exceso */
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.bestSell::before,
+.bestSell::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+  animation: float 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.bestSell::before {
+  width: 370px;
+  height: 300px;
+  background: #d1a89e;
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.bestSell::after {
+  width: 300px;
+  height: 300px;
+  background: #d1a89e;
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+
+.title {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+  font-weight: 100;
+  margin-bottom: 2rem;
+  color: #1e1e1e;
+}
+
+.productsGrid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background: linear-gradient(to top, #fdfafa 0%, #fdeaea 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 260px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 400ms, filter 400ms;
+  cursor: pointer;
+}
+
+.cards:hover .card {
+  transition: transform 400ms, filter 400ms;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  z-index: 2;
+}
+
+.cards:has(.card:hover) .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9);
+}
+
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.info {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.stars {
+  color: #f8b400;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0.3rem 0;
+  color: #222;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: 600;
+  color: #000;
+}

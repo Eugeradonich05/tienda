@@ -1,0 +1,21 @@
+.sliderContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.imagen {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 1rem;
+  scroll-snap-align: center;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.imagen:hover {
+  transform: scale(1.05);
+}
