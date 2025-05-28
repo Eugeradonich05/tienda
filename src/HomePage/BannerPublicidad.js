@@ -5,7 +5,7 @@ export default function BannerPublicidad() {
     <section className={styles.banner}>
       <div className={styles.content}>
         <h1 className={styles.title}>
-          Clean Formulas. <br />
+          Clean Formulas.
           Visible Changes. <br />
           Zero Compromises.
         </h1>

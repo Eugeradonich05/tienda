@@ -1,129 +1,185 @@
-.bestSell {
-  position: relative; /* necesario para posicionar los blobs adentro */
-  overflow: hidden; /* oculta el exceso */
-  padding: 4rem 2rem;
-  background-color: #fff;
-  text-align: center;
+.SectionBest{
+  background-color: #f3ece6;
+  padding-bottom: 40px;
 }
-
-.bestSell::before,
-.bestSell::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(20px);
-  opacity: 0.6;
-  mix-blend-mode: multiply;
-  animation: float 6s ease-in-out infinite alternate;
-  z-index: 0;
-}
-
-.bestSell::before {
-  width: 370px;
-  height: 300px;
-  background: #d1a89e;
-  top: -100px;
-  left: -100px;
-  animation-delay: 0s;
-}
-
-.bestSell::after {
-  width: 300px;
-  height: 300px;
-  background: #d1a89e;
-  bottom: -100px;
-  right: -100px;
-  animation-delay: 2s;
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, 50px);
-  }
-}
-
-
-.title {
-  position: relative;
-  z-index: 1;
-  font-size: 3rem;
+.title{
+  margin-top: 0px;
+  font-size: 4rem;
   font-weight: 100;
   margin-bottom: 2rem;
-  color: #1e1e1e;
+  color: #000000;
 }
 
-.productsGrid {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.cards {
+.productGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
+  gap: 8rem;
+  
 }
 
 .card {
-  background: linear-gradient(to top, #fdfafa 0%, #fdeaea 100%);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  width: 260px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 400ms, filter 400ms;
+  position: relative;
+  width: 400px;
+  height: 450px;
+  background-color: transparent;
+  overflow: hidden;
+  perspective: 1000px;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
   cursor: pointer;
-}
+  border: 1px solid #532b14;
+ box-shadow: 0px 14px 38px 9px rgba(0,0,0,0.29);
+-webkit-box-shadow: 0px 14px 38px 9px rgba(0,0,0,0.29);
+-moz-box-shadow: 0px 14px 38px 9px rgba(0,0,0,0.29);
 
-.cards:hover .card {
-  transition: transform 400ms, filter 400ms;
+
+
 }
 
 .card:hover {
-  transform: scale(1.03);
-  z-index: 2;
+  transform: scale(.85);
+  width: 400px;
+  height: 400px;
+  border: 1px solid #532b14;
 }
 
-.cards:has(.card:hover) .card:not(:hover) {
-  filter: blur(10px);
+/* Imagen visible por defecto */
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 1;
+}
+
+/* Al hacer hover, imagen desaparece */
+.card:hover .cardImage {
+  opacity: 0;
   transform: scale(0.9);
 }
 
-
-.image {
+/* Contenido oculto por defecto, con rotación */
+.cardContent {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
 }
 
-.info {
-  margin-top: 1rem;
-  text-align: left;
+/* Al hacer hover, mostrar contenido */
+.card:hover .cardContent {
+  transform: rotateX(0deg);
 }
 
-.stars {
-  color: #f8b400;
-  margin-bottom: 0.5rem;
+.cardTitle {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
 }
 
-.name {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 0.3rem 0;
-  color: #222;
-}
-
-.description {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 0.5rem;
+.cardDescription {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #777;
+  line-height: 1.4;
 }
 
 .price {
-  font-weight: 600;
+  font-weight: bold;
   color: #000;
+  margin-top: 1.5rem;
+  font-size: 2.2rem;
+}
+
+.stars {
+  font-size: 30px;
+  color: #664b00;
+  margin-top: 5.5rem;
+}
+
+/* ----------------- Responsive ----------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .productGrid {
+    gap: 4rem;
+  }
+
+  .card {
+    width: 320px;
+    height: 400px;
+  }
+
+  .card:hover {
+    transform: scale(0.9);
+    width: 320px;
+    height: 360px;
+  }
+
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+
+  .cardDescription {
+    font-size: 1.1rem;
+  }
+
+  .price {
+    font-size: 2rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .productGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .card {
+    width: 90%;
+    height: 400px;
+  }
+
+  .card:hover {
+    transform: scale(0.95);
+    width: 90%;
+    height: 380px;
+  }
+
+  .cardTitle {
+    font-size: 1.6rem;
+  }
+
+  .cardDescription {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1.8rem;
+  }
+
+  .stars {
+    font-size: 24px;
+    margin-top: 3rem;
+  }
 }

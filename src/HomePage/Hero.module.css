@@ -1,10 +1,11 @@
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #fff8f8 0%, #ffe9e9 100%);
+  background-color: #f3ece6;
   overflow: hidden;
   padding: 4rem 2rem;
 }
 
+/* Decorativos animados */
 .decorativeBackground::before,
 .decorativeBackground::after,
 .decorativeBackground1::after {
@@ -20,8 +21,8 @@
   height: 300px;
   top: -100px;
   left: -50px;
-  background-color: #d1a89ee5;
-  opacity: 0.5;
+  background-color: #271a16;
+  opacity: 0.9;
   animation-delay: 10s;
 }
 
@@ -30,8 +31,8 @@
   height: 500px;
   bottom: 200px;
   right: 350px;
-  background-color: #d1a89e;
-  opacity: 0.3;
+  background-color: #271a16;
+  opacity: 0.9;
   box-shadow: 0px 27px 118px -1px rgba(0, 0, 0, 0.3);
 }
 
@@ -40,13 +41,13 @@
   height: 160px;
   top: 70px;
   left: 100px;
-  background-color: #d1a89e;
-  opacity: 0.5;
-  border: 2px solid #fff;
+  background-color: #271a16;
+  opacity: 0.9;
   z-index: 1;
   animation-delay: 5s;
 }
 
+/* Flotación */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(40px); }
@@ -83,13 +84,6 @@
   color: #555;
   margin-bottom: 2rem;
   line-height: 1.6;
-}
-
-.delivery {
-  font-size: 0.8rem;
-  color: #888;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .buttons {
@@ -133,8 +127,7 @@
   flex: 1 1 300px;
   display: flex;
   justify-content: center;
-  object-fit: contain; /* o cover según lo que necesites */
-
+  object-fit: contain;
 }
 
 .image img {
@@ -148,7 +141,7 @@
   transform: scale(1.03);
 }
 
-/* RESPONSIVE */
+/* Tablet */
 @media (max-width: 768px) {
   .text h1 {
     font-size: 2.2rem;
@@ -160,38 +153,85 @@
     text-align: center;
   }
 
-  .delivery {
-    text-align: center;
-    display: block;
-  }
-
   .buttons {
     justify-content: center;
-  }
-
-  .image {
-    margin-top: 2rem;
   }
 
   .text {
     text-align: center;
     padding: 0;
-    min-width: auto;
+  }
+
+  .image {
+    margin-top: 2rem;
   }
 }
 
+/* Móvil */
 @media (max-width: 480px) {
   .hero {
     padding: 2rem 1rem;
   }
 
+  .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .image {
+    order: -1;
+    margin-top: 0;
+  }
+
   .text h1 {
     font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
   .orderButton,
   .infoButton {
     font-size: 0.9rem;
     padding: 0.6rem 1.2rem;
+    width: 100%;
+    text-align: center;
+    max-width: 280px;
+  }
+
+  /* Reducir tamaño de decorativos */
+  .decorativeBackground::before {
+    width: 180px;
+    height: 180px;
+    top: 460px;
+    left: -30px;
+    opacity: 0.5;
+  }
+
+  .decorativeBackground::after {
+    width: 270px;
+    height: 290px;
+    bottom: 540px;
+    right: 55px;
+    opacity: 1;
+    box-shadow: none;
+  }
+
+  .decorativeBackground1::after {
+    width: 100px;
+    height: 100px;
+    top: 450px;
+    left: 50px;
+    opacity: 0.4;
   }
 }

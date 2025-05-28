@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Presentation.module.css';
 import { FlaskConical, UserCheck2, Eye, Globe2 } from 'lucide-react';
-import imagen from '../imagenes/23.png'
+import imagen from '../imagenes/descr.png'
 
 const Presentation = () => {
   return (
@@ -23,7 +23,6 @@ const Presentation = () => {
           <div className={styles.features}>
             <ul className={styles.featureList}>
               <li>
-                <FlaskConical className={styles.icon} />
                 <div>
                   <strong>Clean, Science-Backed Formulas</strong>
                   <p>Crafted with clinically proven ingredients that deliver real results.</p>
@@ -31,7 +30,6 @@ const Presentation = () => {
               </li>
 
               <li>
-                <UserCheck2 className={styles.icon} />
                 <div>
                   <strong>Dermatologist-Tested & Skin-Loving</strong>
                   <p>Designed to soothe irritation, balance oil production, and protect skin.</p>
@@ -39,7 +37,6 @@ const Presentation = () => {
               </li>
 
               <li>
-                <Eye className={styles.icon} />
                 <div>
                   <strong>Visible Results You Can Trust</strong>
                   <p>"My acne scars faded in 2 weeks!" – Jane Evans</p>
@@ -47,7 +44,6 @@ const Presentation = () => {
               </li>
 
               <li>
-                <Globe2 className={styles.icon} />
                 <div>
                   <strong>Good for Your Skin, Good for the Planet</strong>
                   <p>Recyclable packaging & cruelty-free – Certified by Leaping Bunny.</p>

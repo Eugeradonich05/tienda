@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Hero.module.css';
-import productImg from '../imagenes/velaHero.png'; // Usá la imagen real del producto
+import productImg from '../imagenes/VelaPrincipal.png'; // Usá la imagen real del producto
 
 const Hero = () => {
   return (

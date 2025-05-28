@@ -1,7 +1,9 @@
 .reviewSection {
   padding: 4rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #fff8f8 0%, #ffe9e9 100%);
+      background-color: #f3ece6;
+
+
 }
 
 .title {
@@ -23,9 +25,7 @@
   border-radius: 1rem;
   max-width: 360px;
   text-align: left;
-  background: #fff7f7;
- box-shadow: 20px 20px 100px #d1b3b3,
-               -20px -20px 60px #ffffff;
+  background: #d4cbc4;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -39,6 +39,7 @@
   text-align: center;
   gap: 0.2rem;
   margin-bottom: 1rem;
+  color: #000000 !important;
 }
 
 .cardTitle {

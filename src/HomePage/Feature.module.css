@@ -1,8 +1,9 @@
 .featureSection {
-  background: linear-gradient(to left, #ffe3e3, #ffd8d8);
+  background: linear-gradient(to left, #271a16 0%, #442815);
   padding: 2rem;
   display: flex;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
 .featureContainer {
@@ -30,7 +31,7 @@
 .featureTitle {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #333;
+  color: #e6e6e6;
   line-height: 1.6;
 }
 
@@ -43,7 +44,7 @@
 .ratingNumber {
   font-size: 2.7rem;
   font-weight: bold;
-  color: #222;
+  color: #e6e6e6;
   
 }
 
@@ -56,17 +57,23 @@
 .featureNumber {
   font-size: 2.7rem;
   font-weight: bold;
-  color: #222;
+  color: #e6e6e6;
 }
 
 .subText {
   font-size: 0.9rem;
-  color: #666;
+  color: #aaaaaa;
   margin-top: 0.25rem;
 }
 .subText1{
     font-size: 0.9rem;
-    color: #666;
+    color: #aaaaaa;
     margin-top: -2rem;
     padding-bottom: 10px;
+}
+@media (max-width: 768px) {
+.featureItem {
+
+  border-bottom:1px solid #aaaaaa
+}
 }
